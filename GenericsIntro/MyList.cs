@@ -15,7 +15,7 @@ namespace GenericsIntro
         {
             T[] tempArray = items;     //Geçici dizinin tutturulması, önceki elemanların new'lendiğinde kaybolmaması için geçici dizi!!
 
-            items = new T[items.Length+1];  //Dizinin eleman sayısı
+            items = new T[items.Length + 1];  //Dizinin eleman sayısı
             for (int i = 0; i < tempArray.Length; i++)  //for yazıp, 2 defa tab yapıyoruz.//Bu kod, tempArray'ın tüm elemanlarını i' ye geri atıyoruz.
             {
                 items[i] = tempArray[i];
@@ -23,6 +23,17 @@ namespace GenericsIntro
 
             items[items.Length - 1] = item;  //aslında eklanmek istenen eleman bu satırda ekleniyor.
         }
+
+        public int Length
+        {
+            get { return items.Length; }
+        }
+
+        public T[] Items
+                    {
+            get { return items; }
+        }
     }
 }
+
 //Bir class çalışırken NEW' lendiğinde çalışan bloğa CONSTRUCTOR denir.!!!!!!
